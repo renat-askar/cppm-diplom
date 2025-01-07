@@ -2,7 +2,11 @@
 
 #include "GroundRace.hpp"
 
-Camel::Camel(): GroundVehicle{10, 30, 5}{}
+static constexpr int initSpeed{10};
+static constexpr int initDrivingTimeBeforeRest{30};
+static constexpr double initRestDuration{5};
+
+Camel::Camel(): GroundVehicle{initSpeed, initDrivingTimeBeforeRest, initRestDuration}{}
 
 GroundVehicle::View Camel::getView() const
 {

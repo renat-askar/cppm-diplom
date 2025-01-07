@@ -1,6 +1,10 @@
 #include "CamelFast.hpp"
 
-CamelFast::CamelFast(): GroundVehicle{40, 10, 5}{}
+static constexpr int initSpeed{40};
+static constexpr int initDrivingTimeBeforeRest{10};
+static constexpr double initRestDuration{5};
+
+CamelFast::CamelFast(): GroundVehicle{initSpeed, initDrivingTimeBeforeRest, initRestDuration}{}
 
 GroundVehicle::View CamelFast::getView() const
 {

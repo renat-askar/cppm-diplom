@@ -4,6 +4,7 @@
 #include "groundVehicles/Camel.hpp"
 #include "groundVehicles/CamelFast.hpp"
 #include "groundVehicles/Centaur.hpp"
+
 #include "airVehicles/Broom.hpp"
 #include "airVehicles/Eagle.hpp"
 #include "airVehicles/MagicCarpet.hpp"
@@ -44,7 +45,7 @@ void GroundAirRace::registVehicle(Vehicle::View view)
 
 void GroundAirRace::startRace()
 {
-	Vehicle* temp{ nullptr };
+	Vehicle* temp{nullptr};
 	for (size_t iVehicle{}; iVehicle < countRegisteredVehicles - 1; ++iVehicle)
 	{
 		for (size_t jVehicle{}; jVehicle < countRegisteredVehicles - iVehicle - 1; ++jVehicle)

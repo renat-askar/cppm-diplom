@@ -7,7 +7,7 @@ class Vehicle
 	protected:
 		int speed{};
 
-		Vehicle(int setSpeed);
+		Vehicle(int initSpeed);
 
 	public:
 		enum Type

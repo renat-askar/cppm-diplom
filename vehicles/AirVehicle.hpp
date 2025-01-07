@@ -5,7 +5,7 @@
 class AirVehicle: public Vehicle
 {
 	public:
-		AirVehicle(int setSpeed);
+		AirVehicle(int initSpeed);
 
 		Type getType() const;
 

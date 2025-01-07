@@ -8,7 +8,7 @@ class GroundRace: public Race
 		GroundRace();
 		~GroundRace();
 
-		View getView() const;
+		View getView() const override;
 
 		void registVehicle(Vehicle::View view) override;
 

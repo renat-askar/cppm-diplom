@@ -9,13 +9,13 @@ class GroundVehicle: public Vehicle
 		double restDuration{};
 
 	public:
-		GroundVehicle(int setSpeed, int setDrivingTimeBeforeRest, double setRestDuration);
+		GroundVehicle(int initSpeed, int initDrivingTimeBeforeRest, double initRestDuration);
 
 		Type getType() const;
 
 		View getView() const = 0;
 
-		void setRestDuration(double setRestDuration);
+		void setRestDuration(double restDuration);
 
 		double getTime(Race* race) const;
 

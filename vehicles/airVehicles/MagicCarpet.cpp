@@ -2,17 +2,24 @@
 
 #include "AirRace.hpp"
 
-MagicCarpet::MagicCarpet(): AirVehicle{10}{}
+static constexpr int initSpeed{10};
+
+MagicCarpet::MagicCarpet(): AirVehicle{initSpeed}{}
 
 AirVehicle::View MagicCarpet::getView() const
 {
 	return View::MagicCarpet;
 }
 
+double MagicCarpet::getDistanceFactor(Race* race) const
+{
+	if(race->getDistance() < 1000)   return 1;
+	if(race->getDistance() < 5000)   return 1 - 0.03;
+	if(race->getDistance() < 10000)  return 1 - 0.1;
+	if(race->getDistance() >= 10000) return 1 - 0.05;
+}
+
 double MagicCarpet::getResult(Race* race)
 {
-	if(race->getDistance() < 1000)   return (race->getDistance() * (1 - 0.0)) / 10;
-	if(race->getDistance() < 5000)   return (race->getDistance() * (1 - 0.03)) / 10;
-	if(race->getDistance() < 10000)  return (race->getDistance() * (1 - 0.1)) / 10;
-	if(race->getDistance() >= 10000) return (race->getDistance() * (1 - 0.05)) / 10;
+	return (race->getDistance() * getDistanceFactor(race)) / speed;
 }

@@ -2,7 +2,7 @@
 
 #include "Race.hpp"
 
-Vehicle::Vehicle(int setSpeed): speed{setSpeed}{}
+Vehicle::Vehicle(int initSpeed): speed{initSpeed}{}
 
 int Vehicle::getTime(Race* race) const
 {

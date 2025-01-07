@@ -10,9 +10,9 @@ int Race::getDistance() const
 	return distance;
 }
 
-Vehicle* Race::getVehicleAt(size_t index) const
+Vehicle* Race::getVehicleAt(size_t vehilce) const
 {
-	return registeredVehicles[index];
+	return registeredVehicles[vehilce];
 }
 
 size_t Race::getCountRegisteredVehicles() const

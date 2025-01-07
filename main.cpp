@@ -295,6 +295,23 @@ void simRace(Race* race, bool& simraceProcessMenu)
 	setSimraceProcess(race, simraceProcessMenu);
 }
 
+struct RaceViews
+{
+	GroundRace groundRace{};
+	AirRace airRace{};
+	GroundAirRace groundAirRace{};
+};
+
+Race* raceViewSwitcher(Race* race, RaceViews& raceViews)
+{
+	switch(getRaceViewInput())
+	{
+		case 1:	return &(raceViews.groundRace);
+		case 2: return &(raceViews.airRace);
+		case 3: return &(raceViews.groundAirRace);
+	}
+}
+
 int main()
 {
 	SetConsoleCP(1251);
@@ -307,16 +324,8 @@ int main()
 	{
 		{
 			Race* race{nullptr};
-			GroundRace groundRace{};
-			AirRace airRace{};
-			GroundAirRace groundAirRace{};
-
-			switch (getRaceViewInput())
-			{
-				case 1:	race = &groundRace;    break;
-				case 2: race = &airRace;       break;
-				case 3: race = &groundAirRace; break;
-			}
+			RaceViews raceViews{};
+			race = raceViewSwitcher(race, raceViews);
 			simRace(race, simraceProcess);
 		}
 	}

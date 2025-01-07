@@ -8,7 +8,7 @@ class AirRace: public Race
 		AirRace();
 		~AirRace();
 
-		View getView() const;
+		View getView() const override;
 
 		void registVehicle(Vehicle::View view) override;
 

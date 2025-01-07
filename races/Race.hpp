@@ -23,7 +23,7 @@ class Race
 		void setDistance(int distance);
 		int getDistance() const;
 
-		Vehicle* getVehicleAt(size_t index) const;
+		Vehicle* getVehicleAt(size_t vehicle) const;
 
 		size_t getCountRegisteredVehicles() const;
 

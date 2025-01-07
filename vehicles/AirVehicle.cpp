@@ -1,6 +1,6 @@
 #include "AirVehicle.hpp"
 
-AirVehicle::AirVehicle(int setSpeed): Vehicle{setSpeed}{}
+AirVehicle::AirVehicle(int initSpeed): Vehicle{initSpeed}{}
 
 Vehicle::Type AirVehicle::getType() const
 {

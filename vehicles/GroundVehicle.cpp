@@ -4,8 +4,8 @@
 
 #include <cmath>
 
-GroundVehicle::GroundVehicle(int setSpeed, int setDrivingTimeBeforeRest, double setRestDuration):
-	Vehicle{setSpeed}, drivingTimeBeforeRest{setDrivingTimeBeforeRest}, restDuration{setRestDuration}{}
+GroundVehicle::GroundVehicle(int initSpeed, int initDrivingTimeBeforeRest, double initRestDuration):
+	Vehicle{initSpeed}, drivingTimeBeforeRest{initDrivingTimeBeforeRest}, restDuration{initRestDuration}{}
 
 Vehicle::Type GroundVehicle::getType() const
 {

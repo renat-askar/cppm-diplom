@@ -38,7 +38,7 @@ void GroundRace::registVehicle(Vehicle::View view)
 
 void GroundRace::startRace()
 {
-	Vehicle* temp{ nullptr };
+	Vehicle* temp{nullptr};
 	for (size_t iVehicle{}; iVehicle < countRegisteredVehicles - 1; ++iVehicle)
 	{
 		for (size_t jVehicle{}; jVehicle < countRegisteredVehicles - iVehicle - 1; ++jVehicle)

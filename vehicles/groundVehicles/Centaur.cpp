@@ -2,7 +2,11 @@
 
 #include "GroundRace.hpp"
 
-Centaur::Centaur(): GroundVehicle{15, 8, 2}{}
+static constexpr int initSpeed{15};
+static constexpr int initDrivingTimeBeforeRest{8};
+static constexpr double initRestDuration{2};
+
+Centaur::Centaur(): GroundVehicle{initSpeed, initDrivingTimeBeforeRest, initRestDuration}{}
 
 GroundVehicle::View Centaur::getView() const
 {

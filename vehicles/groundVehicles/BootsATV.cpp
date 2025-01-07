@@ -2,7 +2,11 @@
 
 #include "GroundRace.hpp"
 
-BootsATV::BootsATV(): GroundVehicle{6, 60, 10}{}
+static constexpr int initSpeed{6};
+static constexpr int initDrivingTimeBeforeRest{60};
+static constexpr double initRestDuration{10};
+
+BootsATV::BootsATV(): GroundVehicle{initSpeed, initDrivingTimeBeforeRest, initRestDuration}{}
 
 GroundVehicle::View BootsATV::getView() const
 {
