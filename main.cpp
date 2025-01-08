@@ -264,28 +264,28 @@ void printRaceResultsInputMenuText(Race* race)
 		"Выберите действие: ";
 }
 
-void setSimraceProcess(Race* race, bool& simraceProcess)
+void setSimraceProcess(Race* race, bool& simraceProcessMenu)
 {
-	int raceResultsSelectMenuInput{};
+	int raceResultsMenuSelectInput{};
 	do
 	{
 		printRaceResultsInputMenuText(race);
-		std::cin >> raceResultsSelectMenuInput;
-		if (!std::cin || hasUnextractedInput() || raceResultsSelectMenuInput < 1 || raceResultsSelectMenuInput > 2)
+		std::cin >> raceResultsMenuSelectInput;
+		if (!std::cin || hasUnextractedInput() || raceResultsMenuSelectInput < 1 || raceResultsMenuSelectInput > 2)
 		{
 			clearIgnoreLine();
 			clearConsole();
 		} else break;
 	} while(true);
 
-	switch(raceResultsSelectMenuInput)
+	switch(raceResultsMenuSelectInput)
 	{
 		case 1: clearConsole(); return;
-		case 2: simraceProcess = false;
+		case 2: simraceProcessMenu = false;
 	}
 }
 
-void simRace(Race* race, bool& simraceProcess)
+void simRace(Race* race, bool& simraceProcessMenu)
 {
 	race->setDistance(getRaceDistance());
 	bool raceNotStarted{true};
@@ -295,7 +295,7 @@ void simRace(Race* race, bool& simraceProcess)
 	}
 
 	race->startRace();
-	setSimraceProcess(race, simraceProcess);
+	setSimraceProcess(race, simraceProcessMenu);
 }
 
 struct RaceViews
@@ -326,10 +326,12 @@ int main()
 	bool simraceProcess{true};
 	while(simraceProcess)
 	{
-		Race* race{nullptr};
-		RaceViews raceViews{};
-		race = raceViewSwitcher(race, raceViews);
-		simRace(race, simraceProcess);
+		{
+			Race* race{nullptr};
+			RaceViews raceViews{};
+			race = raceViewSwitcher(race, raceViews);
+			simRace(race, simraceProcess);
+		}
 	}
 	clearConsole();
 	return 0;
