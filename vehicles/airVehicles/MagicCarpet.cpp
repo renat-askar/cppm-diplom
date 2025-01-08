@@ -19,7 +19,12 @@ double MagicCarpet::getDistanceFactor(Race* race) const
 	if(race->getDistance() >= 10000) return 1 - 0.05;
 }
 
-double MagicCarpet::getResult(Race* race)
+double MagicCarpet::getReducedDistance(Race* race) const
 {
-	return (race->getDistance() * getDistanceFactor(race)) / speed;
+	return race->getDistance() * getDistanceFactor(race);
+}
+
+double MagicCarpet::getResultRaceTime(Race* race)
+{
+	return getReducedDistance(race) / speed;
 }

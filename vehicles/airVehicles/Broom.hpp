@@ -11,5 +11,7 @@ class Broom: public AirVehicle
 
 		double getDistanceFactor(Race* race) const;
 
-		double getResult(Race* race) override;
+		double getReducedDistance(Race* race) const;
+
+		double getResultRaceTime(Race* race) override;
 };

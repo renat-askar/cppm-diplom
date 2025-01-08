@@ -20,7 +20,7 @@ double BootsATV::getTimeRest(Race* race)
 	return ((getCountOfRest(race) - 1) * 5) + 10;
 }
 
-double BootsATV::getResult(Race* race)
+double BootsATV::getResultRaceTime(Race* race)
 {
-	return getTime(race) + getTimeRest(race);
+	return getRaceTime(race) + getTimeRest(race);
 }

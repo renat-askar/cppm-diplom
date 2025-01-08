@@ -41,7 +41,7 @@ void AirRace::startRace()
 	{
 		for (size_t jVehicle{}; jVehicle < countRegisteredVehicles - iVehicle - 1; ++jVehicle)
 		{
-			if (registeredVehicles[jVehicle + 0]->getResult(this) > registeredVehicles[jVehicle + 1]->getResult(this))
+			if (registeredVehicles[jVehicle + 0]->getResultRaceTime(this) > registeredVehicles[jVehicle + 1]->getResultRaceTime(this))
 			{
 				temp = registeredVehicles[jVehicle + 0];
 				registeredVehicles[jVehicle + 0] = registeredVehicles[jVehicle + 1];

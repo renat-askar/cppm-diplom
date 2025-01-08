@@ -20,7 +20,7 @@ double Camel::getTimeRest(Race* race)
 	return ((getCountOfRest(race) - 1) * 8) + 5;
 }
 
-double Camel::getResult(Race* race)
+double Camel::getResultRaceTime(Race* race)
 {
-	return getTime(race) + getTimeRest(race);
+	return getRaceTime(race) + getTimeRest(race);
 }

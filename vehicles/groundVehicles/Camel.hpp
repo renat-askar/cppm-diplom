@@ -11,5 +11,5 @@ class Camel: public GroundVehicle
 
 		double getTimeRest(Race* race);
 
-		double getResult(Race* race) override;
+		double getResultRaceTime(Race* race) override;
 };

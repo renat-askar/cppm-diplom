@@ -17,14 +17,14 @@ void GroundVehicle::setRestDuration(double restDuration)
 	this->restDuration = restDuration;
 }
 
-double GroundVehicle::getTime(Race* race) const
+double GroundVehicle::getRaceTime(Race* race) const
 {
 	return static_cast<double>(race->getDistance()) / speed;
 }
 
 int GroundVehicle::getCountOfRest(Race* race) const
 {
-	if(std::trunc(getTime(race)) == getTime(race) && static_cast<int>(getTime(race)) % drivingTimeBeforeRest == 0)
-		return getTime(race) / drivingTimeBeforeRest - 1;
-	return getTime(race) / drivingTimeBeforeRest;
+	if(std::trunc(getRaceTime(race)) == getRaceTime(race) && static_cast<int>(getRaceTime(race)) % drivingTimeBeforeRest == 0)
+		return getRaceTime(race) / drivingTimeBeforeRest - 1;
+	return getRaceTime(race) / drivingTimeBeforeRest;
 }

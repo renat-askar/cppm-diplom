@@ -29,7 +29,7 @@ class Vehicle
 
 		virtual View getView() const = 0;
 
-		int getTime(Race* race) const;
+		int getRaceTime(Race* race) const;
 
-		virtual double getResult(Race* race) = 0;
+		virtual double getResultRaceTime(Race* race) = 0;
 };

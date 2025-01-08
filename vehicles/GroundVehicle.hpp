@@ -17,9 +17,9 @@ class GroundVehicle: public Vehicle
 
 		void setRestDuration(double restDuration);
 
-		double getTime(Race* race) const;
+		double getRaceTime(Race* race) const;
 
 		int getCountOfRest(Race* race) const;
 
-		virtual double getResult(Race* race) = 0;
+		virtual double getResultRaceTime(Race* race) = 0;
 };

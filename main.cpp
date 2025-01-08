@@ -100,6 +100,7 @@ const char* getRaceViewStr(Race* race)
 		case Race::Ground:    return "наземного";
 		case Race::Air:       return "воздушного";
 		case Race::GroundAir: return "наземного и воздушного";
+		default: return "";
 	}
 }
 
@@ -114,6 +115,7 @@ const char* getVehicleViewStr(Vehicle::View view)
 		case Vehicle::Eagle:       return "Орёл";
 		case Vehicle::CamelFast:   return "Верблюд-быстроход";
 		case Vehicle::MagicCarpet: return "Ковёр-самолёт";
+		default: return "";
 	}
 }
 
@@ -128,6 +130,7 @@ Vehicle::Type getVehicleTypeFromView(Vehicle::View view)
 		case Vehicle::Eagle:       return Vehicle::Air;
 		case Vehicle::CamelFast:   return Vehicle::Ground;
 		case Vehicle::MagicCarpet: return Vehicle::Air;
+		default: return Vehicle::Ground;
 	}
 }
 
@@ -248,7 +251,7 @@ void printRaceResultsText(Race* race)
 	std::cout << "Результаты гонки: \n";
 	for(size_t vehicle{}; vehicle < race->getCountRegisteredVehicles(); ++vehicle)
 	{
-		std::cout << vehicle + 1 << ". " << getVehicleViewStr(race->getVehicleAt(vehicle)->getView()) << ". Время: " << race->getVehicleAt(vehicle)->getResult(race) << '\n';
+		std::cout << vehicle + 1 << ". " << getVehicleViewStr(race->getVehicleAt(vehicle)->getView()) << ". Время: " << race->getVehicleAt(vehicle)->getResultRaceTime(race) << '\n';
 	}
 	std::cout << '\n';
 }
@@ -309,6 +312,7 @@ Race* raceViewSwitcher(Race* race, RaceViews& raceViews)
 		case 1:	return &(raceViews.groundRace);
 		case 2: return &(raceViews.airRace);
 		case 3: return &(raceViews.groundAirRace);
+		default: return race;
 	}
 }
 

@@ -16,7 +16,12 @@ double Broom::getDistanceFactor(Race* race) const
 	return 1 - (0.01 * static_cast<int>(race->getDistance() / 1000));
 }
 
-double Broom::getResult(Race* race)
+double Broom::getReducedDistance(Race* race) const
 {
-	return (race->getDistance() * getDistanceFactor(race)) / speed;
+	return race->getDistance() * getDistanceFactor(race);
+}
+
+double Broom::getResultRaceTime(Race* race)
+{
+	return getReducedDistance(race) / speed;
 }

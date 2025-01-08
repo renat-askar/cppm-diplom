@@ -16,7 +16,12 @@ double Eagle::getDistanceFactor(Race* race) const
 	return 1 - 0.06;
 }
 
-double Eagle::getResult(Race* race)
+double Eagle::getReducedDistance(Race* race) const
 {
-	return (race->getDistance() * getDistanceFactor(race)) / speed;
+	return race->getDistance() * getDistanceFactor(race);
+}
+
+double Eagle::getResultRaceTime(Race* race)
+{
+	return getReducedDistance(race) / speed;
 }

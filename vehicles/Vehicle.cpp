@@ -4,7 +4,7 @@
 
 Vehicle::Vehicle(int initSpeed): speed{initSpeed}{}
 
-int Vehicle::getTime(Race* race) const
+int Vehicle::getRaceTime(Race* race) const
 {
 	return race->getDistance() / speed;
 }

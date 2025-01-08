@@ -18,7 +18,7 @@ double Centaur::getTimeRest(Race* race)
 	return getCountOfRest(race) * restDuration;
 }
 
-double Centaur::getResult(Race* race)
+double Centaur::getResultRaceTime(Race* race)
 {
-	return getTime(race) + getTimeRest(race);
+	return getRaceTime(race) + getTimeRest(race);
 }

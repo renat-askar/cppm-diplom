@@ -11,5 +11,5 @@ class AirVehicle: public Vehicle
 
 		View getView() const = 0;
 
-		virtual double getResult(Race* race) = 0;
+		virtual double getResultRaceTime(Race* race) = 0;
 };
