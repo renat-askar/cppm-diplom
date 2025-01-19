@@ -168,7 +168,7 @@ void printRegisteredVehicles(Race* race)
 	std::cout << getVehicleViewStr(race->getVehicleAt(0)->getView());
 	for (size_t vehicle{1}; vehicle < race->getCountRegisteredVehicles(); ++vehicle)
 	{
-		std::cout << ' ' << getVehicleViewStr(race->getVehicleAt(vehicle)->getView());
+		std::cout << ", " << getVehicleViewStr(race->getVehicleAt(vehicle)->getView());
 	}
 }
 
